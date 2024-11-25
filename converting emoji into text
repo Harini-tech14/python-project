@@ -1,0 +1,26 @@
+def emoji_to_text(emoji_symbol):
+    emoji_dict = {
+        "😊": "Happy face with broad eyes",
+        "😄": "Smiling eyes",
+        "😆": "A grinning face with tightly closed eyes, often used to convey laughter or amusement.",
+        "😅": "Grinning Face with Sweat: A smiling face with a sweat drop, indicating relief or nervousness",
+        "😂": "Face with Tears of joy: Often used to indicate laughter, humor, or amusement",
+        "🤣": "Rolling on the Floor Laughing: Similar to 😂 but with even greater laughter.",
+        "😞": "Disappointed Face: Indicates sadness, disappointment, or regret.",
+        "😍": "Heart eyes"
+    }
+    return emoji_dict.get(emoji_symbol, emoji_symbol)
+
+def process_text_with_emojis(text):
+    processed_text = ""
+    for char in text:
+        processed_text += emoji_to_text(char)
+    return processed_text
+
+def main():
+    input_text = input("Enter text containing Emojis: ")
+    processed_text = process_text_with_emojis(input_text)
+    print("Processed text:", processed_text)
+
+if __name__ == "__main__":
+    main()
